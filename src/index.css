@@ -11,7 +11,7 @@
   --clr-secondary: #ebb87d;
   --clr-secondary-light: #f1d8bb;
   --clr-pizzaCheese: #faa613;
-  --clr-pizzaCheese2: #febb48;
+  --clr-pizzaCheese-light: #febb48;
   --clr-pizzaTomato: #f44708;
   --clr-pizzaTomato1: #a10702;
   --clr-white: #ffffff;
@@ -62,7 +62,6 @@ h3 {
   font-weight: 900;
   color: var(--clr-pizzaTomato);
 }
-
 .underline {
   width: 6rem;
   height: 0.25rem;
@@ -137,11 +136,12 @@ h3 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
   transition: var(--transition);
 }
 .show-links {
   height: 15rem;
-  background-color: var(--clr-pizzaCheese2);
+  background-color: var(--clr-pizzaCheese-light);
   box-shadow: var(--dark-light);
 }
 
@@ -174,8 +174,35 @@ h3 {
 }
 
 /* CARD COMPONENT */
-.card-header {
+
+.pizza-card {
   position: relative;
+  background-color: var(--clr-offwhite);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  border-radius: var(--radius);
+  transition: var(--transition-max);
+  height: 450px;
+  perspective: 1000px;
+}
+
+.card-side {
+  box-shadow: var(--light-shadow);
+  border-radius: var(--radius);
+}
+
+.card-header {
+  height: auto;
+  max-height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-bottom: 1rem;
+}
+.card-header > h3 {
+  padding: 1.5rem 0.6rem 0;
 }
 .card-price {
   background-color: var(--clr-pizzaTomato);
@@ -188,24 +215,18 @@ h3 {
   font-family: var(--title-font);
   font-size: 0.75rem;
 }
-.pizza-card {
-  position: relative;
-  background-color: var(--clr-offwhite);
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  border-radius: var(--radius);
-  transition: var(--transition-max);
-  box-shadow: var(--light-shadow);
-}
-
 .card-img {
   object-fit: cover;
+  height: 250px;
   width: 100%;
   border-radius: var(--radius) var(--radius) 0 0;
 }
 .card-body {
-  padding: 0.1rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  height: 150px;
 }
 .card-body > h3 {
   text-align: center;
@@ -222,6 +243,8 @@ h3 {
 .card-desc {
   padding: 0.6rem;
   display: flex;
+  align-content: center;
+  align-items: center;
   justify-content: center;
   justify-items: center;
 }
@@ -236,8 +259,15 @@ h3 {
   font-family: var(--cursive-font);
   font-size: 0.9rem;
 }
-
+.back-section {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
 .card-btn {
+  cursor: pointer;
   color: var(--clr-offwhite);
   font-family: var(--cursive-font);
   display: flex;
@@ -247,18 +277,19 @@ h3 {
   justify-content: right;
   border: none;
   background: transparent;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 .card-btn:hover {
-  scale: 1.1;
+  scale: 1.12;
 }
 .card-footer {
+  height: 50px;
   display: flex;
   flex-wrap: wrap;
   bottom: 0;
   width: 100%;
   margin-top: 0.4rem;
-  background-color: var(--clr-pizzaCheese2);
+  background-color: var(--clr-pizzaCheese-light);
   padding: 0.9rem;
   border-radius: 0 0 var(--radius) var(--radius);
   justify-content: space-between;
