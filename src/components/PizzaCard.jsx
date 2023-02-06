@@ -21,39 +21,39 @@ export const PizzaCard = ({
   const [isFlipped, setIsFlipped] = useState(false)
 
   return (
-    <div className='pizza-card' key={id}>
+    <div className="pizza-card" key={id}>
       <ReactCardFlip isFlipped={isFlipped}>
         {/* ---------------------------CARD-FRONT-------------------------------- */}
-        <div className='card-side card-front'>
+        <div className="card-side card-front">
           {/* CARD HEADER */}
-          <div className='card-header'>
-            <img src={img} alt='' className='card-img' />
-            <div className='card-price'>
+          <div className="card-header">
+            <img src={img} alt="" className="card-img" />
+            <div className="card-price">
               {price}
               <span></span>€
             </div>
           </div>
           {/* CARD-BODY */}
-          <div className='card-body'>
+          <div className="card-body">
             <h2 style={{ textAlign: 'center' }}>{name}</h2>
-            <div className='underline'></div>
-            <div className='card-info'>
-              <div className='card-desc'>
+            <div className="underline"></div>
+            <div className="card-info">
+              <div className="card-desc">
                 <p>{description}</p>
               </div>
             </div>
           </div>
           {/* CARD FOOTER */}
-          <div className='card-footer'>
-            <div className='footer-info'>
+          <div className="card-footer">
+            <div className="footer-info">
               {/* <h6>Allergeni</h6> */}
-              <img src={gluten} alt='' className='card-icon' />
-              <img src={dairy} alt='' className='card-icon' />
-              <img src={corn} alt='' className='card-icon' />
+              <img src={gluten} alt="" className="card-icon" />
+              <img src={dairy} alt="" className="card-icon" />
+              <img src={corn} alt="" className="card-icon" />
             </div>
             <div>
               <button
-                className='card-btn'
+                className="card-btn"
                 onClick={() => setIsFlipped(!isFlipped)}
               >
                 Più Info <MdNavigateNext style={{ fontSize: '1.4rem' }} />
@@ -62,89 +62,83 @@ export const PizzaCard = ({
           </div>
         </div>
         {/* ---------------------------CARD-BACK-------------------------------- */}
-        <div className='card-side card-back back'>
-          <div className='card-header '></div>
-          <div className='card-body' style={{ height: '400px' }}>
-            <div className='back-section'>
+        <div className="card-side card-back back">
+          <div className="card-header "></div>
+          <div className="card-body" style={{ height: '400px' }}>
+            <div className="back-section">
               <h3
                 style={{
                   color: '#f44708',
-                  fontFamily: ' Dancing Script',
-                  fontWeight: '700',
-                  textAlign: 'center',
+                  fontSize: '1rem',
                 }}
               >
                 Ingredienti
               </h3>
-              <div className='card-info'>
-                <div className='card-desc'>
+              <div className="card-info">
+                <div className="card-desc">
                   <p>{ingredients}</p>
                 </div>
               </div>
             </div>
-            <div className='back-section'>
+            <div className="back-section">
               <h3
                 style={{
                   color: '#f44708',
-                  fontFamily: ' Dancing Script',
-                  fontWeight: '700',
-                  textAlign: 'center',
+                  fontSize: '1rem',
                 }}
               >
                 Birre Consigliate
               </h3>
-              <div className='card-info'>
-                <div className='card-desc'>
+              <div className="card-info">
+                <div className="card-desc">
                   <p>{suggestions}</p>
                 </div>
               </div>
             </div>
-            <div className='back-section'>
+            <div className="back-section">
               <h3
                 style={{
                   color: '#f44708',
-                  fontFamily: ' Dancing Script',
-                  fontWeight: '700',
-                  textAlign: 'center',
+                  fontSize: '1rem',
                 }}
               >
                 Valori Nutrizionali
               </h3>
-              <div className='card-info'>
-                <div className='card-desc'>
+              <div className="card-info">
+                <div className="card-desc">
                   <p>{nutritionFacts}</p>
-                  <div className='nutry'>
-                    <div className='card-nutry'>
+                  <div className="nutry">
+                    <div className="card-nutry">
                       {/* bar */}
                       <p>carboidrati</p>
-                      <div class='container'>
-                        <div class='progress progress-striped'>
+                      <div class="container">
+                        <div class="progress progress-striped">
                           <div
-                            class='progress-bar'
+                            class="progress-bar"
                             style={{ width: `${carbo}%` }}
                           ></div>
                         </div>
                       </div>
                     </div>
-                    <div className='card-nutry'>
+                    <div className="card-nutry">
                       {/* bar */}
                       <p>proteine</p>
-                      <div class='container'>
-                        <div class='progress progress-striped'>
+                      <div class="container">
+                        <div class="progress progress-striped">
                           <div
-                            class='progress-bar'
+                            class="progress-bar"
                             style={{ width: `${protein}%` }}
                           ></div>
                         </div>
                       </div>
                     </div>
-                    <div className='card-nutry'>
+                    <div className="card-nutry">
                       {/* bar */}
                       <p>grassi</p>
-                      <div class='container'>
-                        <div class='progress progress-striped'>
+                      <div class="container">
+                        <div class="progress progress-striped">
                           <div
-                            class='progress-bar'
+                            class="progress-bar"
                             style={{ width: `${fat}%` }}
                           ></div>
                         </div>
@@ -155,9 +149,9 @@ export const PizzaCard = ({
               </div>
             </div>
           </div>
-          <div className='card-footer' style={{ justifyContent: 'end' }}>
+          <div className="card-footer" style={{ justifyContent: 'end' }}>
             <button
-              className='card-btn'
+              className="card-btn"
               onClick={() => setIsFlipped(!isFlipped)}
             >
               <MdNavigateBefore style={{ fontSize: '1.4rem' }} /> Indietro

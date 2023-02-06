@@ -149,6 +149,7 @@ h3 {
 
 .pizza-page {
   margin-top: 3.5rem;
+  min-height: 100vh;
 }
 .hero-pizza {
   display: flex;
@@ -177,7 +178,6 @@ h3 {
 
 .pizza-card {
   position: relative;
-  background-color: var(--clr-offwhite);
   display: flex;
   justify-content: center;
   align-content: center;
@@ -188,6 +188,7 @@ h3 {
 }
 
 .card-side {
+  background-color: var(--clr-white);
   box-shadow: var(--light-shadow);
   border-radius: var(--radius);
 }
@@ -336,13 +337,11 @@ h3 {
 .footCenter {
   width: 100%;
   font-family: var(--special-font);
-  font-size: 1.5rem;
-  font-weight: 900;
-  gap: 1.5rem;
+  gap: 1rem;
   color: var(--clr-pizzaTomato1);
-  background-color: var(--clr-pizzaCheese);
-  padding: 2rem 0.5rem;
-  border-radius: var(--radius) var(--radius) 0 0;
+  background-color: var(--clr-pizzaTomato);
+  margin-top: 1.2rem;
+  padding: 1rem 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -391,15 +390,14 @@ h3 {
 
 .container {
   margin: 0.3rem auto;
-  width: 220px;
+  width: 200px;
   text-align: center;
 }
 
 .progress {
-  padding: 3px;
   background: rgba(0, 0, 0, 0.25);
   border-radius: var(--radius);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25),
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15),
     0 1px rgba(255, 255, 255, 0.08);
 }
 
