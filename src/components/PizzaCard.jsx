@@ -3,38 +3,43 @@ import ReactCardFlip from 'react-card-flip'
 import gluten from '../assets/gluten.svg'
 import dairy from '../assets/dairy.svg'
 import corn from '../assets/corn.svg'
-import beer from '../assets/beer.png'
 import { MdNavigateNext, MdNavigateBefore } from 'react-icons/md'
 
-export const PizzaCard = () => {
+export const PizzaCard = ({
+  id,
+  img,
+  name,
+  price,
+  description,
+  ingredients,
+  suggestions,
+  nutritionFacts,
+  carbo,
+  protein,
+  fat,
+}) => {
   const [isFlipped, setIsFlipped] = useState(false)
+
   return (
-    <div className='pizza-card'>
+    <div className='pizza-card' key={id}>
       <ReactCardFlip isFlipped={isFlipped}>
         {/* ---------------------------CARD-FRONT-------------------------------- */}
-
         <div className='card-side card-front'>
           {/* CARD HEADER */}
           <div className='card-header'>
-            <img
-              src='https://www.lemilleeunabontadifranci.it/wp-content/uploads/2021/04/Pizza-margherita-fatta-in-casa-orizzontale.jpg'
-              alt=''
-              className='card-img'
-            />
+            <img src={img} alt='' className='card-img' />
             <div className='card-price'>
-              6<span></span>€
+              {price}
+              <span></span>€
             </div>
           </div>
           {/* CARD-BODY */}
           <div className='card-body'>
-            <h3>La Margherita</h3>
+            <h2 style={{ textAlign: 'center' }}>{name}</h2>
             <div className='underline'></div>
             <div className='card-info'>
               <div className='card-desc'>
-                <p>
-                  Pomodoro, mozzarella e basilico su una base lievitata 24 ore.
-                  La nostra margherita è un tripudio di sapori.
-                </p>
+                <p>{description}</p>
               </div>
             </div>
           </div>
@@ -56,33 +61,96 @@ export const PizzaCard = () => {
             </div>
           </div>
         </div>
-
         {/* ---------------------------CARD-BACK-------------------------------- */}
-
         <div className='card-side card-back back'>
           <div className='card-header '></div>
           <div className='card-body' style={{ height: '400px' }}>
             <div className='back-section'>
-              <h3>Ingredienti</h3>
+              <h3
+                style={{
+                  color: '#f44708',
+                  fontFamily: ' Dancing Script',
+                  fontWeight: '700',
+                  textAlign: 'center',
+                }}
+              >
+                Ingredienti
+              </h3>
               <div className='card-info'>
                 <div className='card-desc'>
-                  <p>
-                    Pomodoro, mozzarella e basilico su una base lievitata 24
-                    ore. La nostra margherita è un tripudio di sapori.
-                  </p>
+                  <p>{ingredients}</p>
                 </div>
               </div>
             </div>
             <div className='back-section'>
-              <img src={beer} alt='https://www.freepik.com' />
-
-              <h3>Birre Consigliate</h3>
+              <h3
+                style={{
+                  color: '#f44708',
+                  fontFamily: ' Dancing Script',
+                  fontWeight: '700',
+                  textAlign: 'center',
+                }}
+              >
+                Birre Consigliate
+              </h3>
               <div className='card-info'>
                 <div className='card-desc'>
-                  <p>
-                    Pomodoro, mozzarella e basilico su una base lievitata 24
-                    ore. La nostra margherita è un tripudio di sapori.
-                  </p>
+                  <p>{suggestions}</p>
+                </div>
+              </div>
+            </div>
+            <div className='back-section'>
+              <h3
+                style={{
+                  color: '#f44708',
+                  fontFamily: ' Dancing Script',
+                  fontWeight: '700',
+                  textAlign: 'center',
+                }}
+              >
+                Valori Nutrizionali
+              </h3>
+              <div className='card-info'>
+                <div className='card-desc'>
+                  <p>{nutritionFacts}</p>
+                  <div className='nutry'>
+                    <div className='card-nutry'>
+                      {/* bar */}
+                      <p>carboidrati</p>
+                      <div class='container'>
+                        <div class='progress progress-striped'>
+                          <div
+                            class='progress-bar'
+                            style={{ width: `${carbo}%` }}
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className='card-nutry'>
+                      {/* bar */}
+                      <p>proteine</p>
+                      <div class='container'>
+                        <div class='progress progress-striped'>
+                          <div
+                            class='progress-bar'
+                            style={{ width: `${protein}%` }}
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className='card-nutry'>
+                      {/* bar */}
+                      <p>grassi</p>
+                      <div class='container'>
+                        <div class='progress progress-striped'>
+                          <div
+                            class='progress-bar'
+                            style={{ width: `${fat}%` }}
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
